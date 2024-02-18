@@ -21,7 +21,9 @@ public class PlayerMovement : MonoBehaviour
 
         if(direction.magnitude >=0.1f)
         {
-            controller.Move(direction * speed *Time.deltaTime);
+            direction = Vector3.ClampMagnitude(direction , 1);
+            controller.Move(direction * speed * Time.deltaTime);
+            Debug.Log(direction);
         }
     }
 
