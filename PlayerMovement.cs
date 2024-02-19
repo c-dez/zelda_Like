@@ -28,6 +28,12 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log(direction);
         }
 
+        //character rotation
+        if (direction != Vector3.zero)
+        {
+            transform.forward = direction;
+        }
+
         bool space = Input.GetKey(KeyCode.Space);
 
         if (space)
