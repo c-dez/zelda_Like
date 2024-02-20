@@ -7,7 +7,7 @@ public class playerHealth : MonoBehaviour
     [SerializeField] private float baseHealth = 100f;
     [SerializeField] private float healtMod = 1f;
     private float maxHealth;
-    private float currentHealth;
+    private float currentHealth = 80f;
 
     void Start()
     {
@@ -17,7 +17,9 @@ public class playerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        maxHealth = baseHealth * healtMod;
 
+        
         
     }
     void OnTriggerEnter(Collider other)
@@ -25,9 +27,10 @@ public class playerHealth : MonoBehaviour
         if (other.gameObject.tag == "healthPack")
         {
             HealthPackScript healthPackScript = other.gameObject.GetComponent<HealthPackScript>();
-            
+            float giveHealth = healthPackScript.giveHealth;
+            currentHealth +=giveHealth;
 
-            Debug.Log(healthPackScript.giveHealth);
+            Debug.Log(currentHealth);
         }
     }
 }
