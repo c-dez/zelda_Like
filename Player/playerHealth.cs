@@ -42,6 +42,14 @@ public class playerHealth : MonoBehaviour
             float enemyDamage = enemyScript.damage;
             currentHealth -= enemyDamage;
             Debug.Log(currentHealth);
+            playerDeath();
+        }
+    }
+    private void playerDeath()
+    {
+        if (currentHealth <= 0)
+        {
+            Debug.Log("game over");
         }
     }
 }
