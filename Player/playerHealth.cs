@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class playerHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private float baseHealth = 100f;
+    [SerializeField] private float healtMod = 1f;
+    private float maxHealth;
+    private float currentHealth;
+
     void Start()
     {
         
@@ -13,6 +17,19 @@ public class playerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "healthPack")
+        {
+            HealthPackScript healthPackScript = other.gameObject.GetComponent<HealthPackScript>();
+            
+
+            Debug.Log(healthPackScript.giveHealth);
+        }
+    }
 }
+
+       
