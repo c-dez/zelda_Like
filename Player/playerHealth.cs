@@ -27,12 +27,13 @@ public class playerHealth : MonoBehaviour
             float giveHealth = healthPackScript.giveHealth;
             currentHealth +=giveHealth;
 
-            // Debug.Log(currentHealth);
             if (currentHealth >= maxHealth)
             {
                 currentHealth = maxHealth;
-                Debug.Log(currentHealth);
-            }            
+            } 
+              
+            healthPackScript.destroyThis();         
+            Debug.Log(currentHealth);
         }
     }
 }

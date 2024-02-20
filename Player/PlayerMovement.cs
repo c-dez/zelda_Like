@@ -7,11 +7,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 15f;
     private float runSpeed ;
     private CharacterController controller;
-    private Renderer visual;
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        visual = gameObject.transform.GetChild(0).GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -23,39 +21,15 @@ public class PlayerMovement : MonoBehaviour
 
         if(direction.magnitude >=0.1f)
         {
-            direction = Vector3.ClampMagnitude(direction , 1);
+            direction = Vector3.ClampMagnitude(direction, 1);
             controller.Move(direction * speed * runSpeed * Time.deltaTime);
             //Debug.Log(direction);
         }
-
         //character rotation
         if (direction != Vector3.zero)
         {
             transform.forward = direction;
         }
-
-        bool space = Input.GetKey(KeyCode.Space);
-
-        if (space)
-        {
-            runSpeed = 2;
-        }
-        else
-        {
-            runSpeed = 1;
-        }
-
-        bool buttonQ = Input.GetKey(KeyCode.Q);
-        if (buttonQ)
-        {
-            visual.material.color = Color.red;
-        }
-        else
-        {
-            visual.material.color = Color.gray;
-        }
-        
     }
-
 }
 
