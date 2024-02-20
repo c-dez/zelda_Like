@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    [SerializeField] public float damage = 50f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +16,5 @@ public class EnemyScript : MonoBehaviour
     {
         
     }
+
 }

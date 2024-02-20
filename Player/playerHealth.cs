@@ -35,6 +35,14 @@ public class playerHealth : MonoBehaviour
             healthPackScript.destroyThis();         
             Debug.Log(currentHealth);
         }
+
+        if (other.gameObject.tag == "enemy")
+        {
+            EnemyScript enemyScript = other.gameObject.GetComponent<EnemyScript>();
+            float enemyDamage = enemyScript.damage;
+            currentHealth -= enemyDamage;
+            Debug.Log(currentHealth);
+        }
     }
 }
 
