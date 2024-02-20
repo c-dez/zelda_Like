@@ -7,9 +7,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 15f;
     private float runSpeed ;
     private CharacterController controller;
+    private Renderer visual;
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        visual = gameObject.transform.GetChild(0).GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -25,11 +27,28 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(direction * speed * runSpeed * Time.deltaTime);
             //Debug.Log(direction);
         }
+
         //character rotation
         if (direction != Vector3.zero)
         {
             transform.forward = direction;
         }
+
+        bool space = Input.GetKey(KeyCode.Space);
+
+        if (space)
+        {
+            runSpeed = 2;
+        }
+        else
+        {
+            runSpeed = 1;
+        }
+
+       
+
+        
     }
+
 }
 
