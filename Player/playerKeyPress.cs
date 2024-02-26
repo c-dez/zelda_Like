@@ -9,6 +9,9 @@ public class playerKeyPress : MonoBehaviour
     private bool button_e;
     private bool button_space;
 
+    private bool button_mouseLeft;
+    private bool button_mouseRight;
+
 
     void Start()
     {
@@ -20,6 +23,10 @@ public class playerKeyPress : MonoBehaviour
         button_q = Input.GetKey(KeyCode.Q);
         button_e = Input.GetKey(KeyCode.E);
         button_space = Input.GetKey(KeyCode.Space);
+
+        button_mouseLeft = Input.GetMouseButton(0);
+        button_mouseRight = Input.GetMouseButton(1);
+
 
         if (button_q)
         {
@@ -35,7 +42,16 @@ public class playerKeyPress : MonoBehaviour
         {
             Debug.Log("space");
         }
+
+        if (button_mouseLeft)
+        {
+            Debug.Log("left mouse");
+        }
         
+        if (button_mouseRight)
+        {
+            Debug.Log("right mouse");
+        }
     }
     
     
