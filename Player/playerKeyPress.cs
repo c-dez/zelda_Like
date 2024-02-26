@@ -5,12 +5,12 @@ using UnityEngine;
 public class playerKeyPress : MonoBehaviour
 {
     // Start is called before the first frame update
-    private bool button_q;
-    private bool button_e;
-    private bool button_space;
+    private bool key_q;
+    private bool key_e;
+    private bool key_space;
 
-    private bool button_mouseLeft;
-    private bool button_mouseRight;
+    private bool key_mouseLeft;
+    private bool key_mouseRight;
 
 
     void Start()
@@ -20,35 +20,35 @@ public class playerKeyPress : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        button_q = Input.GetKey(KeyCode.Q);
-        button_e = Input.GetKey(KeyCode.E);
-        button_space = Input.GetKey(KeyCode.Space);
+        key_q = Input.GetKey(KeyCode.Q);
+        key_e = Input.GetKey(KeyCode.E);
+        key_space = Input.GetKey(KeyCode.Space);
 
-        button_mouseLeft = Input.GetMouseButton(0);
-        button_mouseRight = Input.GetMouseButton(1);
+        key_mouseLeft = Input.GetMouseButton(0);
+        key_mouseRight = Input.GetMouseButton(1);
 
 
-        if (button_q)
+        if (key_q)
         {
             Debug.Log("Q");
         }
 
-        if (button_e)
+        if (key_e)
         {
             Debug.Log("e");
         }
         
-        if (button_space)
+        if (key_space)
         {
             Debug.Log("space");
         }
 
-        if (button_mouseLeft)
+        if (key_mouseLeft)
         {
             Debug.Log("left mouse");
         }
         
-        if (button_mouseRight)
+        if (key_mouseRight)
         {
             Debug.Log("right mouse");
         }
