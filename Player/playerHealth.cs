@@ -41,7 +41,7 @@ public class playerHealth : MonoBehaviour
             EnemyScript enemyScript = other.gameObject.GetComponent<EnemyScript>();
             float enemyDamage = enemyScript.damage;
             currentHealth -= enemyDamage;
-            Debug.Log(currentHealth);
+            // Debug.Log(currentHealth);
             playerDeath();
         }
     }
@@ -49,7 +49,7 @@ public class playerHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            Debug.Log("game over");
+            // Debug.Log("game over");
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 15f;
-    private float runSpeed =2f;
+    private float runSpeed ;
     private CharacterController controller;
     private Renderer visual;
     void Start()
@@ -33,6 +33,22 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.forward = direction;
         }
+
+        bool space = Input.GetKey(KeyCode.Space);
+
+        if (space)
+        {
+            runSpeed = 2;
+        }
+        else
+        {
+            runSpeed = 1;
+        }
+
+       
+
+        
     }
+
 }
 
